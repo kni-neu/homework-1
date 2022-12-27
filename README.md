@@ -28,12 +28,12 @@ Dockerfile
 assignment1.tex
 assignment1.pdf
 assignment1.py
-/images
+./images
   graph_for_question-1.jpg
   results_for_question-2.jpg
-/tex
+./tex
   question_2_proof.tex
-/code
+./code
   helper_functions.py
 ```
 
