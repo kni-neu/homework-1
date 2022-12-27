@@ -37,4 +37,4 @@ assignment1.py
   helper_functions.py
 ```
 
-Do \emph{NOT} include data into your Git repository.
+Do _NOT_ include data into your Git repository.
