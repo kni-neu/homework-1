@@ -222,18 +222,25 @@ Do \emph{NOT} include data into your Git repository.
 
 In subsequent lectures, you'll learn about frequent item sets, where relationships between items are learned by observing how often they co-occur in a set of data. This information is useful for making recommendations in a rule based manner. Before looking at frequent item sets, it is worth understanding the space of all possible sets and get a sense for how quickly the number of sets with unique items grows.
 
-Suppose that we've received only a hundred records of items bought by customers at a market. Each of these records is the receipt of a given customer, identifying what they bought.
+Suppose that we've received only a hundred records of items bought by customers at a market. Each line in the file represents the items an individual customer bought, i.e. their basket. For example, consider the following rows.
+
+\begin{lstlisting}
+ham, cheese, bread
+dates, bananas
+celery, chocolate bars
+\end{lstlisting}
+
+Customer 1 has a basket of ham, cheese, and bread. Customer 2 has a basket of dates and bananas. Customer 3 has a basket of celery and chocolate bars. Each of these records is the receipt of a given customer, identifying what they bought.
 
 \begin{enumerate}
-    \item What is the cardinality of the full set of unique items?
-    \item How many sets with unique items can there possibly be?
-    \item Write a module called \verb"itemsetN()" with the following input/output:
+    \item What is the cardinality of the full set of unique items? Write a function called \verb"cardinality_items" that takes a \verb".csv" text string file as input, where the format is as the above, and calculates the cardinality of the dataset.
+    \item Taking any \verb".csv" file as a sample of a larger dataset, we'd occasionally like to understand the space of all possible subsets comprised of unique items. If there are $N$ unique items (i.e., the cardinality of the entire dataset is $N$), how many sets with unique items can there possibly be? (Ignore the null set.)
+    \item Write a module called \verb"all_itemsets()" with the following input/output:
       \begin{enumerate}
-      \item Input: $N$ = the number of items in a set
+      \item Input: $filename$ = the \verb".csv" text string file, where the format is as the above.
       \item Output: $L = [ S_1, S_2, \cdots S_N ]$ = A list of all possible sets of size $N$
       \end{enumerate}
-    \item What is the number of sets in $L$ as a function of $N$? That is, how many sets do you expect of size $N$?
-    \item Let's take the dataset provided as reflective of the distribution of the receipts writ large. So, for example, if the set $S= \{ \text{bread}, \text{oatmeal}\}$ occurs twice in a dataset with $100$ records, then the probability of item set $\{ \text{bread}, \text{oatmeal} \}$ occurring is 0.02. Write a module called \verb"prob_S" with the following input/output:
+    \item Let's take the small sample \verb".csv" provided as reflective of the distribution of the receipts writ large. So, for example, if the set $S= \{ \text{bread}, \text{oatmeal}\}$ occurs twice in a dataset with $100$ records, then the probability of item set $\{ \text{bread}, \text{oatmeal} \}$ occurring is 0.02. Write a module called \verb"prob_S" with the following input/output:
       \begin{enumerate}
       \item Input: \\ $S$ = the set in question \\ $D$ = the entire Dataset (which if it's in memory, Python will pass by reference)
       \item Output: $P(S)$ = the probability that $S$ occurs
@@ -252,18 +259,11 @@ This is the dataset that was used in that competition.
     \item \url{https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data}
 \end{itemize}
 
-In this exercise, we're going to do a bit of exploring in the Netflix Data. Start by downloading the data. The Kaggle dataset is close to 700MB large, and may take a long time to download. Do \emph{not} include this data in your Docker container, but rather, mount the folder with the data.
+In this exercise, we're going to do a bit of exploring in the Netflix Data. Start by downloading the data. If all worked out well, you should have the files in Fig.~\ref{fig:data-files}. The Kaggle dataset is close to 700MB large, and may take a long time to download. Do \emph{not} include this data in your Docker container, but rather, mount the folder with the data.
 
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Data Verification}
 %%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}
-    \centering
-    \includegraphics{images/hw1q2.png}
-    \caption{If everything worked out well, you should have the above files available to browse and process.}
-    \label{fig:data-files}
-\end{figure}
 
 Data integrity tends to be a problem in large scale processing, especially if there is little to no support. Therefore, it's important to verify the quality of the file download. 
 
@@ -288,6 +288,13 @@ Let's answer the following questions in your writeup:
     \item What other information might we try to extract to better understand the data? For the questions that you may come up with (especially any time series data), make sure you back up your assertions with plots. Go ahead and play around with the data, and explore. 
     \item What are some interesting problems that we might solve? (No need to actually solve them!)
 \end{enumerate}
+
+\begin{figure}
+    \centering
+    \includegraphics{images/hw1q2.png}
+    \caption{If everything worked out well, you should have the above files available to browse and process.}
+    \label{fig:data-files}
+\end{figure}
 
 \section{Grading Criterion}
 
