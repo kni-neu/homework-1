@@ -1,0 +1,119 @@
+\documentclass{cs6220-assignment}
+
+\usepackage{lipsum}
+\usepackage{hyperref}
+
+% \newcommand*{\name}{Amin Bashiri}
+\newcommand*{\assigned}{January 11, 2023}
+\newcommand*{\due}{January 18, 2023}
+\newcommand*{\weekno}{1}
+\newcommand*{\course}{Computer Science 6220: Data Mining}
+\newcommand*{\assignment}{Assignment 1}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%%
+\item Using Docker
+%%%%%%%%%%%%%%%%%%%%
+
+Different companies use different tools for development and different work environments. For future assignments, we won't be prescriptive, but in this homework, we're going to familiarize ourselves with some of the most useful and common delivery and development environment tools in industry today.
+
+Docker \url{http://www.Docker.com} is a  useful mechanism for delivering software or scaling it up. For example, say we want to run a multi-computer job, passing \emph{Docker containers} to each of the nodes in the cluster is one way to have repetitive and predictable behavior when doing large scale compute.
+
+There are two essential Docker units: a \textbf{container} and a \textbf{container image}.
+
+\begin{enumerate}
+    \item A \textbf{container} is a sandboxed process on your machine that is isolated from all other processes on the host machine. That isolation leverages kernel namespaces and cgroups, features that have been in Linux for a long time. Docker has worked to make these capabilities approachable and easy to use. To summarize, a container:
+    \begin{enumerate}
+        \item is a runnable instance of an image. You can create, start, stop, move, or delete a container using the DockerAPI or CLI. 
+        \item can be run on local machines, virtual machines or deployed to the cloud.
+        \item is portable (can be run on any OS).
+        \item is isolated from other containers and runs its own software, binaries, and configurations.
+    \end{enumerate}
+
+    \item When running a container, it uses an isolated filesystem. This custom filesystem is provided by a \textbf{container image}. Since the image contains the container’s filesystem, it must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. The image also contains other configuration for the container, such as environment variables, a default command to run, and other metadata.
+\end{enumerate}
+
+Go ahead and download and install Docker. The getting started guide on Docker has detailed instructions for setting up Docker on 
+\begin{itemize}
+    \item Mac \url{https://docs.docker.com/desktop/install/mac-install/},
+    \item Linux \url{https://docs.docker.com/install/linux/docker-ce/ubuntu}
+    \item Windows \url{https://docs.docker.com/docker-for-windows/install}.
+\end{itemize}
+
+Create a Dockerfile for this assignment, specifying the version of Python, the libraries that you're importing, and a mapped drive.
+
+%%%%%%%%%%%%%%%%%%%%
+\item Using Github
+%%%%%%%%%%%%%%%%%%%%
+
+Software version control at companies is essential for every software company in the industry. There are several types, including \emph{Subversion/SVN} (which Google uses its in-house version branched from SVN). The most popular tool of choice is Github, which Microsoft recently bought.
+
+When ready, have your code in the main branch with the following files:
+
+\begin{itemize}
+    \item Dockerfile specifying what packages that you've used
+    \item assignment1.tex file with your homework writeup
+    \item assignment1.pdf file of the compiled version of your *.tex file
+    \item assignment1.py file of your working code
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%
+\item Question Number 1
+%%%%%%%%%%%%%%%%%%%%
+
+One of the most famous challenges in data science and machine learning is Netflix's Grand Prize Challenge, where they held an open competition for the best algorithm to predict user ratings for films. The grand prize was \$1,000,000 and was won by BellKor's Pragmatic Chaos team. 
+
+This is the dataset that was used in that competition.
+\url{https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data}
+
+\begin{enumerate}
+	\item Setup your environment with a Docker container
+        \item Go to the Kaggle hosted data site:
+ 
+        \url{https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data''} 
+ 
+        and download the data onto your machine or colab.
+	\item Escriba un programa que calcule la integral usando la regla de Simpson con 10 \textit{slices}.
+	\item Compare los resultados con el valor exacto (integre). ¿Cuál es el error fraccional de sus cálculos?
+	\item Modifique el programa para utilizar cientos de \textit{slices}, y luego miles. Note la mejora en el resultado. Compare estos resultados con la regla del trapecio utilizando este gran numero de \textit{slices}.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%
+\item Question Number 2
+%%%%%%%%%%%%%%%%%%%%
+
+\lipsum[2]
+
+\noindent
+A large part of machine learning and data science is about getting data in the right format. 
+
+%%%%%%%%%%%%%%%%%%%%
+\item Question Number 3
+%%%%%%%%%%%%%%%%%%%%
+
+\lipsum[23]
+\begin{itemize}
+	\item \lipsum[75]
+    \item \lipsum[66]
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%
+\item Submitting Your Code
+%%%%%%%%%%%%%%%%%%%%
+
+Write up your homework, what you did for each question with the template that we've provided here:
+\url{https://www.overleaf.com/project/6393c590de432f2a0154f9b9}
+
+Create a Github repository.
+
+
+\end{itemize}
+
+
+\end{document}
+
