@@ -1,8 +1,8 @@
 \documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
 
-% Package information is located here
-\input{homework-template.tex}
-
+\newcommand{\assignment}{2}
+\newcommand{\duedate}{January 25, 2023}
+\input{hw-template.tex}
 \author{
     \textbf{YOUR NAME} \\ 
     \textbf{YOUR GIT USERNAME} \\ 
@@ -10,6 +10,7 @@
 }% INFORMATION
 
 \begin{document}
+
 \maketitle % Print the title
 
 %%%%%%%%%%%%%%%%%%%%
@@ -87,7 +88,7 @@ At the end of this assignment, your submission will point to a repository, where
 
 None of the other files in that repository will be reviewed. We've provided a \LaTeX template that you can use for submission, provided here:
 \begin{itemize}
-    \item \url{https://github.com/kni-neu/homework-1/blob/main/assignment1_template.tex}
+    \item \url{https://github.com/kni-neu/homework-1/blob/main/assignment1-questions.tex}
 \end{itemize}
 
 Do \emph{NOT} include data into your Git repository. If you need help with \LaTeX, the program that creates a PDF file from a coded text file (with extension \verb"*.tex"), you may wish to use the online site \verb"overleaf.com". There is a helpful guide at this url:
@@ -120,7 +121,11 @@ Customer 1 has a basket of ham, cheese, and bread. Customer 2 has a basket of da
       \end{enumerate}
     \item Let's take the small sample \verb".csv" provided as reflective of the distribution of the receipts writ large. So, for example, if the set $S= \{ \text{bread}, \text{oatmeal}\}$ occurs twice in a dataset with $100$ records, then the probability of item set $\{ \text{bread}, \text{oatmeal} \}$ occurring is 0.02. Write a module called \verb"prob_S" with the following input/output:
       \begin{enumerate}
-      \item Input: \\ $S$ = the set in question \\ $D$ = the entire Dataset (which if it's in memory, Python will pass by reference)
+	      \item Input: \\ $S$ = the set in question \\ $D$ = the entire Dataset (which if it's in memory, Python will pass by reference). In this case, D can be a list of lists or a list of sets: 
+		      \begin{itemize}
+			      \item \verb"[ [A, B], [A, C], [C, D] , ... ]"
+			      \item \verb"[ {A, B}, {A, C}, {C, D} , ... ]"
+		      \end{itemize}
       \item Output: $P(S)$ = the probability that $S$ occurs
       \end{enumerate}
 \end{enumerate}
