@@ -112,11 +112,11 @@ Customer 1 has a basket of ham, cheese, and bread. Customer 2 has a basket of da
 
 \begin{enumerate}
     \item What is the cardinality of the full set of unique items? Write a function called \verb"cardinality_items" that takes a \verb".csv" text string file as input, where the format is as the above, and calculates the cardinality of the dataset.
-    \item Taking any \verb".csv" file as a sample of a larger dataset, we'd occasionally like to understand the space of all possible subsets comprised of unique items. If there are $N$ unique items (i.e., the cardinality of the entire dataset is $N$), how many sets with unique items can there possibly be? (Ignore the null set.)
+    \item Taking any \verb".csv" file as a sample of a larger dataset, we'd occasionally like to understand the space of all possible subsets comprised of unique items. If there are $N$ unique items (i.e., the cardinality of the entire dataset is $N$), how many sets with unique items can there possibly be? (Ignore the null set.) NOTE: I only expect the formula, and there is no code associated with this question.
     \item Write a module called \verb"all_itemsets()" with the following input/output:
       \begin{enumerate}
       \item Input: $filename$ = the \verb".csv" text string file, where the format is as the above.
-      \item Output: $L = [ S_1, S_2, \cdots S_N ]$ = A list of all possible sets of size $N$
+      \item Output: $L = [ S_1, S_2, \cdots S_M ]$, which is a list of all possible sets of with unique items $N$
       \end{enumerate}
     \item Let's take the small sample \verb".csv" provided as reflective of the distribution of the receipts writ large. So, for example, if the set $S= \{ \text{bread}, \text{oatmeal}\}$ occurs twice in a dataset with $100$ records, then the probability of item set $\{ \text{bread}, \text{oatmeal} \}$ occurring is 0.02. Write a module called \verb"prob_S" with the following input/output:
       \begin{enumerate}
